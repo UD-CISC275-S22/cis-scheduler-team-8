@@ -10,7 +10,7 @@ export interface degree {
     type: string;
 }
 
-export interface semester {
+export interface session {
     session: string;
     year: number;
 }
