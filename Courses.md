@@ -65,4 +65,5 @@ CISC 487 - Vertically Integrated Projects IV
 
 Science Classes
 -------------------------------------------------------------------
+check requirements for cs majors
 
