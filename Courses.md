@@ -1,4 +1,4 @@
-COMPUTER Science Courses
+Computer Science Courses
 -------------------------------------------------------------------
 CISC 410 - Computational Mathematics I
 CISC 411 - Computational Mathematics II
