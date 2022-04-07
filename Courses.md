@@ -63,9 +63,112 @@ CISC 387 - Vertically Integrated Projects III
 CISC 487 - Vertically Integrated Projects IV
 -------------------------------------------------------------------
 
+
+University Requirements
+-------------------------------------------------------------------
+ENGL 110 - Seminar in Composition (C- minimum)
+First Year Seminar (FYS) (0-4 credits)
+Discovery Learning Experience (DLE) (three credits)
+Multicultural Requirement (three credits)
+University Breadth Requirements (C- minimum):
+  Creative Arts and Humanities (three credits)
+  History and Cultural Change (three credits)
+  Social and Behavioral Sciences (three credits)
+Mathematics, Natural Sciences, and Technology (three credits)
+Capstone Experience 
+-------------------------------------------------------------------
+
+
+Core
+-------------------------------------------------------------------
+A minimum grade of C- is required in each of the following courses: CISC 108, CISC 181, CISC 210, CISC 220, and CISC 260.
+
+CISC 108 - Introduction to Computer Science I Credit(s): 3
+CISC 181 - Introduction to Computer Science II Credit(s): 3
+CISC 210 - Introduction to Systems Programming Credit(s): 3
+CISC 220 - Data Structures Credit(s): 3
+CISC 260 - Machine Organization and Assembly Language Credit(s): 3
+CISC 275 - Introduction to Software Engineering Credit(s): 3
+CISC 303 - Automata Theory Credit(s): 3
+CISC 320 - Introduction to Algorithms Credit(s): 3
+CISC 361 - Operating Systems Credit(s): 3
+CISC 372 - Parallel Computing Credit(s): 3
+
+Six additional credits of computer science technical electives numbered 301 or above, except for CISC 355, CISC 356, CISC 357, CISC 465, CISC 366 and CISC 466. Because of their very nature, Experimental Courses (courses with an x67 number) must be approved beforehand by the CIS Undergraduate Committee before being accepted toward the requirement for these six additional credits of computer science.  At most 3 credits of Vertically Integrated Projects (CISC 387 and 487) may be applied towards this requirement.
+
+Twelve credits in advanced courses in a focus area approved by the student’s CISC advisor and the CISC Undergraduate Coordinator.
+Students are encouraged to explore how other subject areas impact and are impacted by computer science. Focus area courses must be distinct from other CISC requirements and technical electives.
+
+
+MATH 205 - Statistical Methods Credit(s): 4
+or
+MATH 350 - Probability Theory and Simulation Methods Credit(s): 3
+
+MATH 210 - Discrete Mathematics I Credit(s): 3 (minimum grade C-)
+MATH 241 - Analytic Geometry and Calculus A Credit(s): 4
+MATH 242 - Analytic Geometry and Calculus B Credit(s): 4
+-------------------------------------------------------------------
+
+
+Capstone Requirement
+-------------------------------------------------------------------
+One of the following sequences:
+
+CISC 498 - Computer Science Senior Design Project I Credit(s): 3
+CISC 499 - Computer Science Senior Design Project II Credit(s): 3
+or
+
+UNIV 401 - Senior Thesis Credit(s): 2-4
+(3 cr.)
+
+UNIV 402 - Senior Thesis Credit(s): 2-4
+(3 cr.)
+-------------------------------------------------------------------
+
+
 Science Courses
 -------------------------------------------------------------------
-check requirements for cs majors
+Twelve credits in science courses including one of the following eight credit laboratory science sequences:
+
+Option I:
+PHYS 207 - Fundamentals of Physics I Credit(s): 3
+PHYS 227 - Fundamentals of Physics Laboratory I Credit(s): 1
+PHYS 208 - Fundamentals of Physics II Credit(s): 3
+PHYS 228 - Fundamentials of Physics Laboratory II Credit(s): 1
+
+Option II:
+CHEM 103 - General Chemistry Credit(s): 3
+CHEM 133 - General Chemistry Laboratory Credit(s): 1
+CHEM 104 - General Chemistry Credit(s): 3
+CHEM 134 - General Chemistry Laboratory Credit(s): 1
+
+Option III:
+BISC 207 - Introductory Biology I Credit(s): 4
+BISC 208 - Introductory Biology II Credit(s): 4
+
+Option V:
+GEOL 105 - Geological Hazards and Their Human Impact Credit(s): 3
+GEOL 107 - Geology of Dynamic Earth Credit(s): 4
+GEOL 115 - Geological Hazards Laboratory Credit(s): 1
+
+Option VI:
+
+GEOL 107 - Geology of Dynamic Earth Credit(s): 4
+GEOL 110 - Earth’s Evolving Systems Credit(s): 4
+-------------------------------------------------------------------
+
+
+Additional Requirements
+-------------------------------------------------------------------
+A course chosen from CISC 304 or MATH 349, or a 300-level or above math course approved beforehand in writing by the CISC advisor and the CISC Undergraduate Coordinator.
+ 
+
+ENGL 312 - Written Communications in Business Credit(s): 3
+or
+ENGL 410 - Technical Writing Credit(s): 3
+
+CISC 355 - Computers, Ethics and Society Credit(s): 3
+-------------------------------------------------------------------
 
 
 Concentration Notes (for specific degree paths)
