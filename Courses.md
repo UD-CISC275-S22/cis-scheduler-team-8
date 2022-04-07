@@ -1,4 +1,4 @@
-COMPUTER SCIENCE COURSE LIST
+COMPUTER Science Courses
 -------------------------------------------------------------------
 CISC 410 - Computational Mathematics I
 CISC 411 - Computational Mathematics II
@@ -63,7 +63,16 @@ CISC 387 - Vertically Integrated Projects III
 CISC 487 - Vertically Integrated Projects IV
 -------------------------------------------------------------------
 
-Science Classes
+Science Courses
 -------------------------------------------------------------------
 check requirements for cs majors
 
+
+Concentration Notes (for specific degree paths)
+-------------------------------------------------------------------
+MATH 242 is required for the Bioinformatics, Data Science, High Performance Computing, and Theory concentrations, and for the traditional program.
+MATH 243 is required for the Data Science and High Performance Computing concentrations.
+Science Requirement must be CHEM 103-104 or CHEM 107-108 for the Bioinformatics concentration.
+MATH 205 is explicitly required for the Data Science concentration.
+MATH 350 is explicitly required for the Data track of the High Performance Computing concentration.
+Refer to the catalog page for a description of acceptable courses for individual requirements.
