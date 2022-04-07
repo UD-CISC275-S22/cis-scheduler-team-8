@@ -62,3 +62,5 @@ CISC 287 - Vertically Integrated Projects II
 CISC 387 - Vertically Integrated Projects III
 CISC 487 - Vertically Integrated Projects IV
 -------------------------------------------------------------------
+
+Science Classes
