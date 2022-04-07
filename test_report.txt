@@ -39,14 +39,15 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
-----------|---------|----------|---------|---------|-------------------
-File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-----------|---------|----------|---------|---------|-------------------
-All files |       0 |      100 |       0 |       0 |                   
- App.tsx  |       0 |      100 |       0 |       0 | 5                 
-----------|---------|----------|---------|---------|-------------------
+---------------|---------|----------|---------|---------|-------------------
+File           | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------|---------|----------|---------|---------|-------------------
+All files      |       0 |      100 |       0 |       0 |                   
+ App.tsx       |       0 |      100 |       0 |       0 | 6                 
+ interfaces.ts |       0 |        0 |       0 |       0 |                   
+---------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        1.397 s
+Time:        1.918 s
 Ran all test suites.
