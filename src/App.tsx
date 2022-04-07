@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import "./interfaces.ts";
 
 function App(): JSX.Element {
     return (
