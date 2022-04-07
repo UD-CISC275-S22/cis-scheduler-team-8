@@ -1,4 +1,3 @@
-export {};
 export interface course {
     name: string;
     prereqs: string;
