@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import "./interfaces.ts";
-import { SessionPicker } from "./session-picker";
+/*import { SessionPicker } from "./session-picker";*/
 
 function App(): JSX.Element {
     return (
