@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import "./interfaces.ts";
-/*import { SessionPicker } from "./session-picker";*/
+import { SessionPicker } from "./session-picker";
 
 function App(): JSX.Element {
     return (
@@ -16,7 +16,7 @@ function App(): JSX.Element {
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
             </p>
-            {/*<SessionPicker></SessionPicker>;*/}
+            <SessionPicker></SessionPicker>;
         </div>
     );
 }
