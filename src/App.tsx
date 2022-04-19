@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { DegreePlan } from "./degree-plan";
 import "./interfaces.ts";
 import { SessionPicker } from "./session-picker";
 
@@ -14,7 +15,7 @@ function App(): JSX.Element {
                 automatically reload. Nick Costley, Marvin Dang, Rohan
                 Yarlagadda
             </p>
-            <SessionPicker></SessionPicker>;
+            <SessionPicker></SessionPicker>;<DegreePlan></DegreePlan>;
         </div>
     );
 }
