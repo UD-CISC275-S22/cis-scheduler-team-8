@@ -2,6 +2,8 @@ import React from "react";
 import "./App.css";
 import "./interfaces.ts";
 import { SessionPicker } from "./session-picker";
+import testData from "./Test Data/courseData.json";
+import { CourseTable } from "./Components/courseTable";
 
 function App(): JSX.Element {
     return (
@@ -15,6 +17,7 @@ function App(): JSX.Element {
                 Yarlagadda
             </p>
             <SessionPicker></SessionPicker>;
+            <CourseTable course={testData}></CourseTable>;
         </div>
     );
 }
