@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "test plan",
+        "semesters": [
+            {
+                "id": 1,
+                "session": "Fall",
+                "year": "2018",
+                "courses": [
+                    {
+                        "code": "CISC108",
+                        "name": "Introduction to Computer Science I",
+                        "prereqs": "",
+                        "credits": 3,
+                        "taken": false
+                    },
+                    {
+                        "code": "MATH241",
+                        "name": "Analytic Geometry and Calculus A",
+                        "prereqs": "",
+                        "credits": 4,
+                        "taken": false
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "session": "Spring",
+                "year": "2019",
+                "courses": [
+                    {
+                        "code": "CISC210",
+                        "name": "Introduction to Systems Programming",
+                        "prereqs": "A grade of C- or better in CISC 106 or CISC 108.",
+                        "credits": 3,
+                        "taken": false
+                    },
+                    {
+                        "code": "MATH 242",
+                        "name": "Analytic Geometry and Calculus B",
+                        "prereqs": "MATH 241 or MATH 232.",
+                        "credits": 4,
+                        "taken": false
+                    }
+                ]
+            }
+        ]
+    }
+]
