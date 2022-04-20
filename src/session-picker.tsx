@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
-import { session } from "./interfaces";
 
 export function SessionPicker(): JSX.Element {
     const [session, setSession] = useState<string>("Semester");
