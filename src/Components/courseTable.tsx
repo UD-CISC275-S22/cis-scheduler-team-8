@@ -1,7 +1,7 @@
 import React from "react";
 import { course } from "../Interfaces/course";
 
-export function CourseList({ course }: { course: course[] }): JSX.Element {
+export function CourseTable({ course }: { course: course[] }): JSX.Element {
     return (
         <table className="Course-table">
             <tr>

@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import "./interfaces.ts";
 import { SessionPicker } from "./session-picker";
-import testData from "./Test Data/courseData.json";
+import testData from "./Data/courseData.json";
 import { CourseTable } from "./Components/courseTable";
 
 function App(): JSX.Element {
