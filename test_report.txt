@@ -3,7 +3,7 @@
 > react-scripts test "--coverage"
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (3 ms)
+  ✕ renders the course name somewhere (2 ms)
 
   ● renders the course name somewhere
 
@@ -39,16 +39,23 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
---------------------|---------|----------|---------|---------|-------------------
-File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
---------------------|---------|----------|---------|---------|-------------------
-All files           |       0 |      100 |       0 |       0 |                   
- App.tsx            |       0 |      100 |       0 |       0 | 7                 
- interfaces.ts      |       0 |        0 |       0 |       0 |                   
- session-picker.tsx |       0 |      100 |       0 |       0 | 5-9               
---------------------|---------|----------|---------|---------|-------------------
+---------------------|---------|----------|---------|---------|-------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------|---------|----------|---------|---------|-------------------
+All files            |       0 |      100 |       0 |       0 |                   
+ src                 |       0 |      100 |       0 |       0 |                   
+  App.tsx            |       0 |      100 |       0 |       0 | 9                 
+  interfaces.ts      |       0 |        0 |       0 |       0 |                   
+  session-picker.tsx |       0 |      100 |       0 |       0 | 5-16              
+ src/Components      |       0 |      100 |       0 |       0 |                   
+  courseTable.tsx    |       0 |      100 |       0 |       0 | 5-15              
+ src/Interfaces      |       0 |        0 |       0 |       0 |                   
+  course.ts          |       0 |        0 |       0 |       0 |                   
+  plan.ts            |       0 |        0 |       0 |       0 |                   
+  semester.ts        |       0 |        0 |       0 |       0 |                   
+---------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        1.587 s
+Time:        1.806 s
 Ran all test suites.
