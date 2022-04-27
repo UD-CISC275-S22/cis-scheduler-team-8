@@ -3,6 +3,8 @@ import "./App.css";
 import { DegreePlan } from "./degree-plan";
 import "./interfaces.ts";
 import { SessionPicker } from "./session-picker";
+//import testData from "./Test Data/courseData.json";
+//import { CourseTable } from "./Components/courseTable";
 
 function App(): JSX.Element {
     return (
