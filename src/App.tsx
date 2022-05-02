@@ -17,7 +17,8 @@ function App(): JSX.Element {
                 automatically reload. Nick Costley, Marvin Dang, Rohan
                 Yarlagadda
             </p>
-            <SessionPicker></SessionPicker>;<DegreePlan></DegreePlan>;
+            {/* <SessionPicker></SessionPicker> */}
+            <DegreePlan></DegreePlan>
         </div>
     );
 }
