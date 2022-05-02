@@ -25,6 +25,10 @@
     color: white;
 }
 
+.useSession {
+    display: inline;
+    vertical-align: middle;
+}
 .App-link {
     color: #61dafb;
 }

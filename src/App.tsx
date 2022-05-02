@@ -27,7 +27,7 @@ function App(): JSX.Element {
                 automatically reload. Nick Costley, Marvin Dang, Rohan
                 Yarlagadda
             </p>
-            <SessionPicker></SessionPicker>;
+            <SessionPicker></SessionPicker>
             <CourseTable course={testData}></CourseTable>;
             <div>
                 <Button onClick={handleOpenModal}>view</Button>
