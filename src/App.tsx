@@ -30,7 +30,7 @@ function App(): JSX.Element {
             <SessionPicker></SessionPicker>;
             <CourseTable course={testData}></CourseTable>;
             <div>
-                <Button onClick={handleOpenModal}>view</Button>
+                <Button onClick={handleOpenModal}>edit</Button>
                 <ModalView
                     show={showModal}
                     handleClose={handleCloseModal}
