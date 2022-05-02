@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Button, Modal, Form, Row, Col, Container } from "react-bootstrap";
+import { createSecureContext } from "tls";
 import { CourseTable } from "../Components/courseTable";
 import { course } from "../Interfaces/course";
+import { editSemesterWindow } from "./editSemesterModal";
+import { SessionPicker } from "../session-picker";
 
 export function ModalView({
     show,
@@ -21,6 +24,7 @@ export function ModalView({
                 <Modal.Body>
                     Semesters
                     <CourseTable course={data}></CourseTable>
+                    <SessionPicker></SessionPicker>
                 </Modal.Body>
             </Modal>
         </div>
