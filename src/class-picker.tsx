@@ -87,14 +87,16 @@ export function ClassPicker(): JSX.Element {
         setClasses(newClasses);
     }
     function removeClass(codeFind: string) {
-        /*Fix*/
         const newClasses = classes.filter(
             (Class: course): boolean => Class.code !== codeFind
         );
         setClasses(newClasses);
     }
     function editClass(codeFind: string) {
-        setClasses(classes);
+        const newClasses = classes.filter(
+            (Class: course): boolean => Class.code !== codeFind
+        );
+        setClasses(newClasses);
     }
     return (
         <div>
