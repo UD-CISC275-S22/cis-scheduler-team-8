@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./App.css";
 import "./interfaces.ts";
-import { SessionPicker } from "./session-picker";
 import testData from "./Data/courseData1.json";
 import testData2 from "./Data/courseData2.json";
-import { CourseTable } from "./Components/courseTable";
 import { ModalView } from "./Components/modalView";
 import { SemesterView } from "./Components/semesterView";
 

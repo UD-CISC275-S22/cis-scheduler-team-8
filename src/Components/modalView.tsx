@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-import { Button, Modal, Form, Row, Col, Container } from "react-bootstrap";
-import { CourseTable } from "../Components/courseTable";
+import React from "react";
+import { Modal } from "react-bootstrap";
 import { course } from "../Interfaces/course";
 //import { CourseEditor } from "../Components/courseEditor";
-import { SessionPicker } from "../session-picker";
 import { ClassPicker } from "../class-picker";
 
 export function ModalView({
