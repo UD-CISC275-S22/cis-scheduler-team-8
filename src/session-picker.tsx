@@ -110,7 +110,7 @@ export function SessionPicker(): JSX.Element {
                         <Button onClick={() => removeSemester(semester.id)}>
                             Delete
                         </Button>
-                        <ClassPicker intialClass={[]}></ClassPicker>
+                        <ClassPicker></ClassPicker>
                     </p>
                 )
             )}{" "}
