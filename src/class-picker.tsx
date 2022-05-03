@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import "./App.css";
 import { course } from "./Interfaces/course";
-import testData from "./Data/courseData1.json";
 
 interface PassNewClass {
     addClass: (n: string, r: string, s: number) => void;
