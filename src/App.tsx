@@ -6,7 +6,6 @@ import testData from "./Data/courseData1.json";
 import testData2 from "./Data/courseData2.json";
 import { ModalView } from "./Components/modalView";
 import { SemesterView } from "./Components/semesterView";
-import { SessionPicker } from "./session-picker";
 import { DegreePlan } from "./degree-plan";
 
 //export const DEFAULTS = defaults.map((plan): Plan => ({ ...plan }));
@@ -34,9 +33,11 @@ function App(): JSX.Element {
             </div>
             <br></br>
             <DegreePlan></DegreePlan>
-            <SessionPicker></SessionPicker>
-            <div>
-                <header>Switching plans</header>
+            <div className="Title-header">
+                <header>Default Plan</header>
+            </div>
+            <div className="semester-header">
+                <header>Fall Semester</header>
             </div>
             <SemesterView course={testData}></SemesterView>
             <div>
@@ -46,6 +47,9 @@ function App(): JSX.Element {
                     handleClose={handleCloseModal}
                     data={testData}
                 ></ModalView>
+            </div>
+            <div className="Title-header">
+                <header>Spring Semester</header>
             </div>
             <SemesterView course={testData2}></SemesterView>
             <div>
