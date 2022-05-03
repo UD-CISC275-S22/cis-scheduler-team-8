@@ -4,6 +4,7 @@ import { degree } from "./Interfaces/plan";
 import { semester } from "./Interfaces/semester";
 import { course } from "./Interfaces/course";
 
+//merge comment, delete later
 const defaultCourses: course[] = [
     {
         code: "CISC108",
