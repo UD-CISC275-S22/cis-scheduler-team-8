@@ -3,6 +3,11 @@ import { Button, Form } from "react-bootstrap";
 import "./App.css";
 import { semester } from "./Interfaces/semester";
 
+<<<<<<< HEAD
+export function SessionPicker(): JSX.Element {
+    const [edit, setEdit] = useState<boolean>(false);
+    const [session, setSession] = useState<string>("Fall");
+=======
 interface PassNewSemester {
     addSemester: (n: string, r: string) => void;
 }
@@ -16,6 +21,7 @@ type ChangeEvent = React.ChangeEvent<
 export function AddSession({ addSemester }: PassNewSemester): JSX.Element {
     const [edit, setEdit] = useState<boolean>(false);
     const [currentSession, setCurrentSession] = useState<string>("Fall");
+>>>>>>> 0ea5a84faa6a6e1e7068c6114b78755dc8b15fe4
     const [year, setYear] = useState<string>("2022");
     function updateSemester(event: React.ChangeEvent<HTMLSelectElement>) {
         setCurrentSession(event.target.value);
@@ -28,10 +34,14 @@ export function AddSession({ addSemester }: PassNewSemester): JSX.Element {
             {edit && (
                 <Form.Group controlId="sessions">
                     <Form.Label>Session Season</Form.Label>
+<<<<<<< HEAD
+                    <Form.Select value={session} onChange={updateSemester}>
+=======
                     <Form.Select
                         value={currentSession}
                         onChange={updateSemester}
                     >
+>>>>>>> 0ea5a84faa6a6e1e7068c6114b78755dc8b15fe4
                         <option value="Fall">Fall</option>
                         <option value="Winter">Winter</option>
                         <option value="Spring">Spring</option>
@@ -45,6 +55,19 @@ export function AddSession({ addSemester }: PassNewSemester): JSX.Element {
                     <Form.Control value={year} onChange={updateYear} />
                 </Form.Group>
             )}
+<<<<<<< HEAD
+            <br></br>
+            {session} {year}
+            <div>
+                <Form.Check
+                    type="switch"
+                    id="is-switch-on"
+                    label="Edit"
+                    checked={edit}
+                    onChange={() => setEdit(!edit)}
+                />
+            </div>
+=======
             {edit && (
                 <Button onClick={() => addSemester(currentSession, year)}>
                     Confirm
@@ -111,6 +134,7 @@ export function SessionPicker(): JSX.Element {
             )}{" "}
             <br></br>
             <AddSession addSemester={addSemester}></AddSession>
+>>>>>>> 0ea5a84faa6a6e1e7068c6114b78755dc8b15fe4
         </div>
     );
 }
