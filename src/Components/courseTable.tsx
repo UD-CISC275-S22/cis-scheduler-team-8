@@ -1,6 +1,5 @@
 import React from "react";
 import { course } from "../Interfaces/course";
-import { Button, Form } from "react-bootstrap";
 
 export function CourseTable({ course }: { course: course[] }): JSX.Element {
     return (
