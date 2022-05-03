@@ -1,5 +1,6 @@
 import React from "react";
 import { course } from "../Interfaces/course";
+import { Button, Form } from "react-bootstrap";
 
 export function CourseTable({ course }: { course: course[] }): JSX.Element {
     return (
@@ -7,9 +8,7 @@ export function CourseTable({ course }: { course: course[] }): JSX.Element {
             <tr>
                 <th>Course Code</th>
                 <th>Course Name</th>
-                <th>Pre-Req</th>
                 <th>Credits</th>
-                <th>Taken</th>
             </tr>
             {course.map((course: course) => (
                 <tr key={course.code}>

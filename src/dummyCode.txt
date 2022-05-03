@@ -1,4 +1,180 @@
-import React from "react";
-import { semester } from "../Interfaces/semester";
-import { Container, Row, Col } from "react-bootstrap";
-import { courseTable } from "./courseTable";
+import React, { useState } from "react";
+import { Button, Form } from "react-bootstrap";
+import { course } from "../Interfaces/course";
+const DEFAULT_COURSE: course = {
+    //id: 0,
+    code: "CISC101",
+    name: "Introduction",
+    credits: 3,
+    prereqs: "",
+    taken: false
+};
+
+export function CourseEditor({
+    courses,
+    setCourses
+}: {
+    courses: course[];
+    setCourses: (courses: course[]) => void;
+}): JSX.Element {
+    const [courseList, setCourseList] = useState<course[]>(courses);
+
+    function changeCode(id: number, newCode: string) {
+        setCourseList(
+            courses.map(
+                (course: course): course =>
+                    course.id === id ? { ...course, code: newCode } : course
+            )
+        );
+        setCourses(
+            courses.map(
+                (course: course): course =>
+                    course.id === id ? { ...course, code: newCode } : course
+            )
+        );
+    }
+
+    function changeTitle(id: number, newName: string) {
+        setCourseList(
+            courses.map(
+                (course: course): course =>
+                    course.id === id ? { ...course, name: newName } : course
+            )
+        );
+        setCourses(
+            courses.map(
+                (course: course): course =>
+                    course.id === id ? { ...course, name: newName } : course
+            )
+        );
+    }
+
+    function changeCredits(id: number, newCredits: number) {
+        setCourseList(
+            courses.map(
+                (course: course): course =>
+                    course.id === id
+                        ? { ...course, credits: newCredits }
+                        : course
+            )
+        );
+        setCourses(
+            courses.map(
+                (course: course): course =>
+                    course.id === id
+                        ? { ...course, credits: newCredits }
+                        : course
+            )
+        );
+    }
+
+    function deleteCourse(id: number) {
+        setCourseList(
+            courses.filter((course: course): boolean => course.id !== id)
+        );
+        setCourses(
+            courses.filter((course: course): boolean => course.id !== id)
+        );
+    }
+
+    function addCourse() {
+        setCourseList(
+            courses.concat({ ...DEFAULT_COURSE, id: courses.length + 1 })
+        );
+        setCourses(
+            courses.concat({ ...DEFAULT_COURSE, id: courses.length + 1 })
+        );
+    }
+
+    return (
+        <div>
+            <table width="auto" className="Course-editor">
+                <tr>
+                    <th>Course Code</th>
+                    <th>Course Name</th>
+                    <th>Credits</th>
+                    <th>Prereqs</th>
+                    <th>Completed</th>
+                    <th>Required</th>
+                </tr>
+                {courseList.map((course: course) => (
+                    <tr key={course.id}>
+                        <td>
+                            <Form.Control
+                                type="string"
+                                value={course.code}
+                                onChange={(
+                                    event: React.ChangeEvent<HTMLInputElement>
+                                ) => {
+                                    changeCode(course.id, event.target.value);
+                                    console.log("Course code edited");
+                                }}
+                            />
+                        </td>
+                        <td>
+                            <Form.Control
+                                type="string"
+                                value={course.name}
+                                onChange={(
+                                    event: React.ChangeEvent<HTMLInputElement>
+                                ) => {
+                                    changeTitle(course.id, event.target.value);
+                                    console.log("Course title edited");
+                                }}
+                            />
+                        </td>
+                        <td>
+                            <Form.Control
+                                type="number"
+                                value={course.credits}
+                                onChange={(
+                                    event: React.ChangeEvent<HTMLInputElement>
+                                ) => {
+                                    changeCredits(
+                                        course.id,
+                                        parseInt(event.target.value, 10)
+                                    );
+                                    console.log("Course credits edited");
+                                }}
+                            />
+                        </td>
+                        <td>
+                            <Button
+                                onClick={() => deleteCourse(course.id)}
+                                variant="danger"
+                                className="me-8"
+                            >
+                                Delete
+                            </Button>
+                        </td>
+                    </tr>
+                ))}
+            </table>
+            <Button
+                onClick={() => addCourse()}
+                variant="success"
+                className="m-4"
+            >
+                Add Course
+            </Button>
+        </div>
+    );
+}
+
+
+
+
+export function SemesterView({
+    Semesters
+}: {
+    Semesters: semester[];
+}): JSX.Element {
+    return (
+        <div>
+            <Container>
+                {Semesters.map(Semester: semester): JSX.Element => (
+                )}
+            </Container>
+        </div>
+    );
+}
