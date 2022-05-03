@@ -6,8 +6,7 @@ import { ClassPicker } from "../class-picker";
 
 export function ModalView({
     show,
-    handleClose,
-    data
+    handleClose
 }: {
     show: boolean;
     handleClose: () => void;
