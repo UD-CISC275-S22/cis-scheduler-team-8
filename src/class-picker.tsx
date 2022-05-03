@@ -2,20 +2,13 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import "./App.css";
 import { course } from "./Interfaces/course";
+import testData from "./Data/courseData1.json";
 
 interface PassNewClass {
     addClass: (n: string, r: string, s: number) => void;
 }
 
-const starting_class: course[] = [
-    {
-        code: "CISC108",
-        name: "Introduction to Computer Science I",
-        prereqs: "None",
-        credits: 4,
-        taken: true
-    }
-];
+//const starting_class: course[] = testData;
 
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
@@ -71,8 +64,12 @@ export function AddClass({ addClass }: PassNewClass): JSX.Element {
         </div>
     );
 }
-export function ClassPicker(): JSX.Element {
-    const [classes, setClasses] = useState<course[]>(starting_class);
+export function ClassPicker({
+    intialClass
+}: {
+    intialClass: course[];
+}): JSX.Element {
+    const [classes, setClasses] = useState<course[]>(intialClass);
     function addClass(newCode: string, newName: string, newCredits: number) {
         const newClasses = [
             ...classes,
@@ -100,20 +97,34 @@ export function ClassPicker(): JSX.Element {
     }
     return (
         <div>
-            {classes.map(
-                (course: course): JSX.Element => (
-                    <p key={course.code}>
-                        {" "}
-                        {course.code} {course.name}
-                        <Button onClick={() => editClass(course.code)}>
-                            Edit
-                        </Button>
-                        <Button onClick={() => removeClass(course.code)}>
-                            Delete
-                        </Button>
-                    </p>
-                )
-            )}{" "}
+            <table className="edit-table">
+                <tr>
+                    <th>Course Code</th>
+                    <th>Course Name</th>
+                    <th>Credits</th>
+                </tr>
+                {classes.map(
+                    (course: course): JSX.Element => (
+                        <tr key={course.code}>
+                            <td>{course.code}</td>
+                            <td>{course.name}</td>
+                            <td>{course.credits}</td>
+                            <td>
+                                <Button onClick={() => editClass(course.code)}>
+                                    Edit
+                                </Button>
+                            </td>
+                            <td>
+                                <Button
+                                    onClick={() => removeClass(course.code)}
+                                >
+                                    Delete
+                                </Button>
+                            </td>
+                        </tr>
+                    )
+                )}
+            </table>
             <AddClass addClass={addClass}></AddClass>
         </div>
     );

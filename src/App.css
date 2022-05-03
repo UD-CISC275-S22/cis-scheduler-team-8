@@ -24,6 +24,9 @@
     font-size: calc(30px + 2vmin);
     color: white;
 }
+.modal-lg {
+    max-width: 600px !important;
+}
 
 .useSession {
     display: inline;
@@ -31,6 +34,45 @@
 }
 .App-link {
     color: #61dafb;
+}
+
+.Welcome-message {
+    font-size: 120%;
+}
+
+.Course-table {
+    border: 1px solid #aaaaaa;
+    text-align: center;
+    display: block;
+}
+.Course-table th {
+    width: 70%;
+    border: 1px solid #bbb;
+    padding: 10px 80px 10px 90px;
+}
+.Course-table td {
+    padding: 10px 2px 8px 4px;
+    border: 1px solid #bbb;
+}
+
+.Course-table tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+.Edit-table {
+    border: 1px solid #aaaaaa;
+    text-align: center;
+    display: block;
+}
+
+.Edit-table th {
+    width: 10%;
+    border: 1px solid #bbb;
+    padding: 10px 80px 10px 90px;
+}
+.dit-table td {
+    padding: 10px 2px 8px 4px;
+    border: 1px solid #bbb;
 }
 
 @keyframes App-logo-spin {

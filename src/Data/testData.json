@@ -9,6 +9,7 @@
                 "year": "2018",
                 "courses": [
                     {
+                        "id": 1,
                         "code": "CISC108",
                         "name": "Introduction to Computer Science I",
                         "prereqs": "",
@@ -16,6 +17,7 @@
                         "taken": false
                     },
                     {
+                        "id": 2,
                         "code": "MATH241",
                         "name": "Analytic Geometry and Calculus A",
                         "prereqs": "",
