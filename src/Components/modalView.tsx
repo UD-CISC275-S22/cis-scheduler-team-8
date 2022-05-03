@@ -21,7 +21,7 @@ export function ModalView({
                 </Modal.Header>
                 <Modal.Body>
                     Semesters
-                    <ClassPicker intialClass={data}></ClassPicker>
+                    <ClassPicker></ClassPicker>
                 </Modal.Body>
             </Modal>
         </div>

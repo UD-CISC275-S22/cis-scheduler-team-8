@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import "./App.css";
 import { semester } from "./Interfaces/semester";
+import { ClassPicker } from "./class-picker";
 
 interface PassNewSemester {
     addSemester: (n: string, r: string) => void;
@@ -83,10 +84,13 @@ export function SessionPicker(): JSX.Element {
         setSemesters(newSemesters);
     }
     function removeSemester(idfind: number) {
-        /*Fix*/
         const newSemesters = semesters.filter(
             (Session: semester): boolean => Session.id != idfind
         );
+        setSemesters(newSemesters);
+    }
+    function clearSemesters() {
+        const newSemesters: semester[] = [];
         setSemesters(newSemesters);
     }
     return (
@@ -106,11 +110,13 @@ export function SessionPicker(): JSX.Element {
                         <Button onClick={() => removeSemester(semester.id)}>
                             Delete
                         </Button>
+                        <ClassPicker></ClassPicker>
                     </p>
                 )
             )}{" "}
             <br></br>
             <AddSession addSemester={addSemester}></AddSession>
+            <Button onClick={() => clearSemesters()}>Clear Semesters</Button>
         </div>
     );
 }
