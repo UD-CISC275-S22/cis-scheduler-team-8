@@ -42,17 +42,17 @@ FAIL src/App.test.tsx
 ------------------------|---------|----------|---------|---------|-------------------
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ------------------------|---------|----------|---------|---------|-------------------
-All files               |       0 |        0 |       0 |       0 |                   
- src                    |       0 |        0 |       0 |       0 |                   
-  App.tsx               |       0 |      100 |       0 |       0 | 14-20             
-  class-picker.tsx      |       0 |        0 |       0 |       0 | 16-118            
-  degree-plan.tsx       |       0 |      100 |       0 |       0 | 8-76              
+All files               |       5 |        0 |       0 |     5.1 |                   
+ src                    |    5.95 |        0 |       0 |    6.09 |                   
+  App.tsx               |       0 |      100 |       0 |       0 | 16-22             
+  class-picker.tsx      |    2.77 |        0 |       0 |    2.77 | 27-193            
+  degree-plan.tsx       |   23.07 |      100 |       0 |   23.07 | 34-76             
   interfaces.ts         |       0 |        0 |       0 |       0 |                   
-  session-picker.tsx    |       0 |        0 |       0 |       0 | 11-119            
+  session-picker.tsx    |    3.44 |        0 |       0 |    3.44 | 18-119            
  src/Components         |       0 |        0 |       0 |       0 |                   
   courseTable.tsx       |       0 |      100 |       0 |       0 | 5-13              
   editSemesterModal.tsx |       0 |        0 |       0 |       0 | 22-85             
-  modalView.tsx         |       0 |      100 |       0 |       0 | 16                
+  modalView.tsx         |       0 |      100 |       0 |       0 | 15                
   semesterTable.tsx     |       0 |      100 |       0 |       0 | 15                
   semesterView.tsx      |       0 |      100 |       0 |       0 | 7                 
  src/Interfaces         |       0 |        0 |       0 |       0 |                   
@@ -63,5 +63,5 @@ All files               |       0 |        0 |       0 |       0 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.482 s
+Time:        2.405 s
 Ran all test suites.
