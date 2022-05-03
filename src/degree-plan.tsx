@@ -1,10 +1,10 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { SessionPicker } from "./session-picker";
 import { degree } from "./Interfaces/plan";
 import { semester } from "./Interfaces/semester";
 import { course } from "./Interfaces/course";
 
+//merge comment, delete later
 const defaultCourses: course[] = [
     {
         code: "CISC108",
