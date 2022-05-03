@@ -1,0 +1,16 @@
+[
+    {
+        "code": "CISC275",
+        "name": "Introduction to Software Engineering",
+        "prereqs": "",
+        "credits": 3,
+        "taken": false
+    },
+    {
+        "code": "MATH210",
+        "name": "Discrete Mathematics 1",
+        "prereqs": "",
+        "credits": 3,
+        "taken": false
+    }
+]
