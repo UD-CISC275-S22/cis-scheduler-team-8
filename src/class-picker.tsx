@@ -70,7 +70,7 @@ export function AddClass({ addClass }: PassNewClass): JSX.Element {
                     Confirm
                 </Button>
             )}
-            <Button onClick={() => setEdit(!edit)}>Add Course</Button>
+            <Button onClick={() => setEdit(!edit)}>Add</Button>
         </div>
     );
 }
@@ -169,28 +169,48 @@ export function ClassPicker(): JSX.Element {
     }
     return (
         <div>
-            {classes.map(
-                (course: course): JSX.Element => (
-                    <p key={course.code}>
-                        {" "}
-                        {course.code} {course.name}
-                        <EditClass
-                            editClass={() =>
-                                editClass(
-                                    course.code,
-                                    course.name,
-                                    course.credits
-                                )
-                            }
-                        ></EditClass>
-                        <Button onClick={() => removeClass(course.code)}>
-                            Delete
-                        </Button>
-                    </p>
-                )
-            )}{" "}
+            <table className="edit-table">
+                <tr>
+                    <th>Course Code</th>
+                    <th>Course Name</th>
+                    <th>Credits</th>
+                </tr>
+                {classes.map(
+                    (course: course): JSX.Element => (
+                        <tr key={course.code}>
+                            <td>{course.code}</td>
+                            <td>{course.name}</td>
+                            <td>{course.credits}</td>
+                            <td>
+                                <Button
+                                    onClick={() =>
+                                        editClass(
+                                            course.code,
+                                            course.name,
+                                            course.credits
+                                        )
+                                    }
+                                >
+                                    Confirm
+                                </Button>
+                            </td>
+                            <td>
+                                <Button
+                                    onClick={() => removeClass(course.code)}
+                                >
+                                    Delete
+                                </Button>
+                            </td>
+                            <td>
+                                <Button onClick={() => clearClasses()}>
+                                    Clear
+                                </Button>
+                            </td>
+                        </tr>
+                    )
+                )}
+            </table>
             <AddClass addClass={addClass}></AddClass>
-            <Button onClick={() => clearClasses()}>Clear Courses</Button>
         </div>
     );
 }
