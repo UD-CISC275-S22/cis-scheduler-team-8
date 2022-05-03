@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import "./App.css";
 import { semester } from "./Interfaces/semester";
-import { ClassPicker } from "./class-picker";
 
 interface PassNewSemester {
     addSemester: (n: string, r: string) => void;
