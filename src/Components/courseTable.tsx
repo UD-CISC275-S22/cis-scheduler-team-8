@@ -7,9 +7,7 @@ export function CourseTable({ course }: { course: course[] }): JSX.Element {
             <tr>
                 <th>Course Code</th>
                 <th>Course Name</th>
-                <th>Pre-Req</th>
                 <th>Credits</th>
-                <th>Taken</th>
             </tr>
             {course.map((course: course) => (
                 <tr key={course.code}>
