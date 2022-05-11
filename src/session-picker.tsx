@@ -3,14 +3,11 @@ import { Button, Form } from "react-bootstrap";
 import "./App.css";
 import { semester } from "./Interfaces/semester";
 import { ClassPicker } from "./class-picker";
+import { degree } from "./Interfaces/plan";
 
 interface PassNewSemester {
     addSemester: (n: string, r: string) => void;
 }
-
-const starting_semester: semester[] = [
-    { id: 1, session: "Fall", year: "2022", courses: [] }
-];
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
 >;
@@ -57,8 +54,8 @@ export function AddSession({ addSemester }: PassNewSemester): JSX.Element {
         </div>
     );
 }
-export function SessionPicker(): JSX.Element {
-    const [semesters, setSemesters] = useState<semester[]>(starting_semester);
+export function SessionPicker({ plan }: { plan: degree }): JSX.Element {
+    const [semesters, setSemesters] = useState<semester[]>(plan.semester);
     const [semesterNum, setNum] = useState<number>(2);
     function addSemester(newSession: string, newYear: string) {
         const newSemesters = [
@@ -110,15 +107,17 @@ export function SessionPicker(): JSX.Element {
                         <Button onClick={() => removeSemester(semester.id)}>
                             Delete
                         </Button>
-                        <ClassPicker></ClassPicker>
+                        <ClassPicker
+                            semester={semester}
+                            semesters={semesters}
+                        ></ClassPicker>
                     </p>
                 )
             )}{" "}
             <br></br>
             <AddSession addSemester={addSemester}></AddSession>
             <Button onClick={() => clearSemesters()}>Clear Semesters</Button>
+            <br></br>
         </div>
     );
 }
-//test
-//test2

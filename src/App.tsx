@@ -6,7 +6,6 @@ import testData from "./Data/courseData1.json";
 import testData2 from "./Data/courseData2.json";
 import { ModalView } from "./Components/modalView";
 import { SemesterView } from "./Components/semesterView";
-import { SessionPicker } from "./session-picker";
 import { DegreePlan } from "./degree-plan";
 
 //export const DEFAULTS = defaults.map((plan): Plan => ({ ...plan }));
@@ -34,7 +33,6 @@ function App(): JSX.Element {
             </div>
             <br></br>
             <DegreePlan></DegreePlan>
-            <SessionPicker></SessionPicker>
             <div>
                 <header>Switching plans</header>
             </div>
