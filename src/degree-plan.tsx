@@ -34,6 +34,7 @@ export function DegreePlan(): JSX.Element {
     const [name, setName] = useState<string>("Plan");
     const [session, setSession] = useState<string>("Fall");
     const [plans, setPlan] = useState<degree[]>(degreeList);
+    //const [visible, setVisible] = useState<boolean>(false);
     function updateSemester(event: React.ChangeEvent<HTMLSelectElement>) {
         setSession(event.target.value);
     }
@@ -48,6 +49,9 @@ export function DegreePlan(): JSX.Element {
         ];
         setPlan(newPlanList);
     }
+    // function hideComponent() {
+
+    // }
     return (
         <div>
             <div>
