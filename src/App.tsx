@@ -37,7 +37,7 @@ function App(): JSX.Element {
                 <header>Default Plan</header>
             </div>
             <div className="semester-header">
-                <header>Fall Semester</header>
+                <header>Fall Semester 2022</header>
             </div>
             <SemesterView course={testData}></SemesterView>
             <div>
@@ -49,7 +49,7 @@ function App(): JSX.Element {
                 ></ModalView>
             </div>
             <div className="Title-header">
-                <header>Spring Semester</header>
+                <header>Spring Semester 2023</header>
             </div>
             <SemesterView course={testData2}></SemesterView>
             <div>

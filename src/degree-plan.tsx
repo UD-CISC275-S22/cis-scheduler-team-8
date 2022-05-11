@@ -3,6 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import { degree } from "./Interfaces/plan";
 import { semester } from "./Interfaces/semester";
 import { course } from "./Interfaces/course";
+import { SessionPicker } from "./session-picker";
 
 //merge comment, delete later
 const defaultCourses: course[] = [
@@ -81,6 +82,7 @@ export function DegreePlan(): JSX.Element {
                     />
                 </Form.Group>
             </div>
+            <SessionPicker plan={plans[0]}></SessionPicker>
         </div>
     );
 }
