@@ -33,8 +33,11 @@ function App(): JSX.Element {
             </div>
             <br></br>
             <DegreePlan></DegreePlan>
-            <div>
-                <header>Switching plans</header>
+            <div className="Title-header">
+                <header>Default Plan</header>
+            </div>
+            <div className="semester-header">
+                <header>Fall Semester 2022</header>
             </div>
             <SemesterView course={testData}></SemesterView>
             <div>
@@ -44,6 +47,9 @@ function App(): JSX.Element {
                     handleClose={handleCloseModal}
                     data={testData}
                 ></ModalView>
+            </div>
+            <div className="Title-header">
+                <header>Spring Semester 2023</header>
             </div>
             <SemesterView course={testData2}></SemesterView>
             <div>

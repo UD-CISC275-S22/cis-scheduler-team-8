@@ -62,7 +62,7 @@ export function AddClass({ addClass }: PassNewClass): JSX.Element {
                     Confirm
                 </Button>
             )}
-            <Button onClick={() => setEdit(!edit)}>Add Course</Button>
+            <Button onClick={() => setEdit(!edit)}>Add</Button>
         </div>
     );
 }
