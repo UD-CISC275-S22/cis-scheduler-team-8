@@ -1,8 +1,8 @@
-import CISC from "../Data/catalog.json";
+/*import CISC from "../Data/catalog.json";
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 
-/*export function Pool(): JSX.Element {
+export function Pool(): JSX.Element {
     return (
         <div>
             {CISC.map(
