@@ -3,7 +3,7 @@
 > react-scripts test "--coverage"
 
 FAIL src/App.test.tsx
-  ✕ renders the course name somewhere (3 ms)
+  ✕ renders the course name somewhere (4 ms)
 
   ● renders the course name somewhere
 
@@ -42,17 +42,18 @@ FAIL src/App.test.tsx
 ------------------------|---------|----------|---------|---------|-------------------
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ------------------------|---------|----------|---------|---------|-------------------
-All files               |       4 |        0 |       0 |    4.08 |                   
- src                    |    4.76 |        0 |       0 |    4.87 |                   
+All files               |    2.72 |        0 |       0 |     2.8 |                   
+ src                    |    3.22 |        0 |       0 |    3.33 |                   
   App.tsx               |       0 |      100 |       0 |       0 | 15-21             
-  class-picker.tsx      |    2.77 |        0 |       0 |    2.77 | 27-205            
-  degree-plan.tsx       |   23.07 |      100 |       0 |   23.07 | 34-76             
+  class-picker.tsx      |       0 |        0 |       0 |       0 | 19-227            
+  degree-plan.tsx       |   23.07 |      100 |       0 |   23.07 | 35-77             
   interfaces.ts         |       0 |        0 |       0 |       0 |                   
-  session-picker.tsx    |       0 |        0 |       0 |       0 | 11-119            
+  session-picker.tsx    |       0 |        0 |       0 |       0 | 15-119            
  src/Components         |       0 |        0 |       0 |       0 |                   
   courseTable.tsx       |       0 |      100 |       0 |       0 | 5-13              
   editSemesterModal.tsx |       0 |        0 |       0 |       0 | 22-85             
   modalView.tsx         |       0 |      100 |       0 |       0 | 15                
+  poolOfCourses.tsx     |       0 |      100 |       0 |       0 | 4                 
   semesterTable.tsx     |       0 |      100 |       0 |       0 | 15                
   semesterView.tsx      |       0 |      100 |       0 |       0 | 7                 
  src/Interfaces         |       0 |        0 |       0 |       0 |                   
@@ -63,5 +64,5 @@ All files               |       4 |        0 |       0 |    4.08 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.397 s
+Time:        3.57 s
 Ran all test suites.
