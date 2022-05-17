@@ -2,21 +2,47 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./App.css";
 import "./interfaces.ts";
-import testData from "./Data/courseData1.json";
-import testData2 from "./Data/courseData2.json";
-import { ModalView } from "./Components/modalView";
-import { SemesterView } from "./Components/semesterView";
-import { DegreePlan } from "./degree-plan";
 
-//export const DEFAULTS = defaults.map((plan): Plan => ({ ...plan }));
+//interfaces
+import { semester } from "./Interfaces/semester";
+
+//data
+import sampleSemester from "./Data/sampleSemester.json";
+
+//components
+//import { DegreePlan } from "./degree-plan";
+import { SemesterList } from "./Components/SemesterList";
+import { AddSemesterModal } from "./Components/AddSemester";
+
+const SEMESTER = sampleSemester.map((semester: semester) => ({ ...semester }));
+
 function App(): JSX.Element {
-    //const handleCloseAddModal = () => setShowAddModal(false);
-    //const handleShowAddModal = () => setShowAddModal(true);
-    const [showModal, setShowModal] = useState(false);
+    const [semesters, setSemesters] = useState<semester[]>(SEMESTER);
 
-    const handleCloseModal = () => setShowModal(false);
-    const handleOpenModal = () => setShowModal(true);
-    //const[(plans, setPlans)] = useState<Plan[]>(DEFAULTS);
+    const [showAddModal, setShowAddModal] = useState(false);
+
+    function editSemester(id: number, newSemester: semester) {
+        setSemesters(
+            semesters.map(
+                (semester: semester): semester =>
+                    semester.id === id ? newSemester : semester
+            )
+        );
+    }
+
+    function deleteSemester(id: string) {
+        setSemesters(
+            semesters.filter(
+                (semester: semester): boolean => semester.id.toString() !== id
+            )
+        );
+    }
+    function addSemester(newSemester: semester) {
+        setSemesters([...semesters, newSemester]);
+    }
+    //handlers for opening and closing addCourseModal
+    const handleCloseAddModal = () => setShowAddModal(false);
+    const handleShowAddModal = () => setShowAddModal(true);
 
     return (
         <div className="App">
@@ -32,34 +58,28 @@ function App(): JSX.Element {
                 </p>
             </div>
             <br></br>
-            <DegreePlan></DegreePlan>
-            <div className="Title-header">
-                <header>Default Plan</header>
-            </div>
-            <div className="semester-header">
-                <header>Fall Semester 2022</header>
-            </div>
-            <SemesterView course={testData}></SemesterView>
             <div>
-                <Button onClick={handleOpenModal}>edit</Button>
-                <ModalView
-                    show={showModal}
-                    handleClose={handleCloseModal}
-                    data={testData}
-                ></ModalView>
+                <SemesterList
+                    semesters={semesters}
+                    deleteSemester={deleteSemester}
+                    editSemester={editSemester}
+                ></SemesterList>
             </div>
-            <div className="Title-header">
-                <header>Spring Semester 2023</header>
-            </div>
-            <SemesterView course={testData2}></SemesterView>
             <div>
-                <Button onClick={handleOpenModal}>edit</Button>
-                <ModalView
-                    show={showModal}
-                    handleClose={handleCloseModal}
-                    data={testData2}
-                ></ModalView>
+                <Button
+                    variant="success"
+                    className="m-4"
+                    onClick={handleShowAddModal}
+                >
+                    +
+                </Button>
+                <AddSemesterModal
+                    show={showAddModal}
+                    handleClose={handleCloseAddModal}
+                    addSemester={addSemester}
+                ></AddSemesterModal>
             </div>
+            <br></br>
         </div>
     );
 }

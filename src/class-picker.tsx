@@ -14,9 +14,8 @@ const starting_class: course[] = [
     {
         code: "CISC108",
         name: "Introduction to Computer Science I",
-        prereqs: "None",
-        credits: 4,
-        taken: true
+        prereq: "None",
+        credits: 4
     }
 ];
 
@@ -137,9 +136,8 @@ export function ClassPicker(): JSX.Element {
             {
                 code: newCode,
                 name: newName,
-                prereqs: "None",
-                credits: newCredits,
-                taken: true
+                prereq: "None",
+                credits: newCredits
             }
         ];
         setClasses(newClasses);
@@ -156,9 +154,8 @@ export function ClassPicker(): JSX.Element {
             {
                 code: newCode,
                 name: newName,
-                prereqs: "None",
-                credits: newCredits,
-                taken: true
+                prereq: "None",
+                credits: newCredits
             }
         ];
         setClasses(newClasses);
@@ -167,6 +164,7 @@ export function ClassPicker(): JSX.Element {
         const newClasses: course[] = [];
         setClasses(newClasses);
     }
+
     return (
         <div>
             <table className="edit-table">
