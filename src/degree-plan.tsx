@@ -4,6 +4,7 @@ import { degree } from "./Interfaces/plan";
 import { semester } from "./Interfaces/semester";
 import { course } from "./Interfaces/course";
 import { SessionPicker } from "./session-picker";
+import { Requirements } from "./requirements";
 
 //merge comment, delete later
 const defaultCourses: course[] = [
@@ -12,7 +13,8 @@ const defaultCourses: course[] = [
         name: "Introduction to Computer Science I",
         prereqs: "None",
         credits: 4,
-        taken: true
+        taken: true,
+        image: "test"
     }
 ];
 const defaultSem: semester[] = [
@@ -83,6 +85,7 @@ export function DegreePlan(): JSX.Element {
                 </Form.Group>
             </div>
             <SessionPicker plan={plans[0]}></SessionPicker>
+            <Requirements></Requirements>
         </div>
     );
 }
