@@ -11,10 +11,15 @@ const defaultCourses: course[] = [
     {
         code: "CISC108",
         name: "Introduction to Computer Science I",
+<<<<<<< HEAD:src/degree-plan.tsx
         prereqs: "None",
         credits: 4,
         taken: true,
         image: "test"
+=======
+        prereq: "None",
+        credits: 4
+>>>>>>> 15aec0a82b57a11f23c2b02720a2328f4ae5a6fa:src/Components/degree-plan.tsx
     }
 ];
 const defaultSem: semester[] = [

@@ -12,6 +12,18 @@ interface editNewClass {
     previousCourse: course;
 }
 
+<<<<<<< HEAD
+const starting_class: course[] = [
+    {
+        code: "CISC108",
+        name: "Introduction to Computer Science I",
+        prereq: "None",
+        credits: 4
+    }
+];
+
+=======
+>>>>>>> 1bb82d29e2a439db712bd7ff66f490558adae789
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
 >;
@@ -134,9 +146,8 @@ export function ClassPicker({
             {
                 code: newCode,
                 name: newName,
-                prereqs: "None",
-                credits: newCredits,
-                taken: true
+                prereq: "None",
+                credits: newCredits
             }
         ];
         setClasses(newClasses);
@@ -155,9 +166,8 @@ export function ClassPicker({
             {
                 code: newCode,
                 name: newName,
-                prereqs: "None",
-                credits: newCredits,
-                taken: true
+                prereq: "None",
+                credits: newCredits
             }
         ];
         setClasses(newClasses);
@@ -182,6 +192,7 @@ export function ClassPicker({
         const newClasses: course[] = [];
         setClasses(newClasses);
     }
+
     return (
         <div>
             {classes.map(
