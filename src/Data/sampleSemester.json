@@ -1,0 +1,59 @@
+[
+    {
+        "id": 1,
+        "session": "winter",
+        "year": "2022",
+        "courses": [
+            {
+                "code": "CISC108",
+                "name": "Introduction to Computer Science I",
+                "prereq": "",
+                "credits": 3
+            },
+            {
+                "code": "MATH241",
+                "name": "Analytic Geometry and Calculus A",
+                "prereq": "",
+                "credits": 4
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "session": "Spring",
+        "year": "2023",
+        "courses": [
+            {
+                "code": "CISC109",
+                "name": "Introduction to Computer Science I",
+                "prereq": "",
+                "credits": 3
+            },
+            {
+                "code": "MATH242",
+                "name": "Analytic Geometry and Calculus A",
+                "prereq": "",
+                "credits": 4
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "session": "Fall",
+        "year": "2023",
+        "courses": [
+            {
+                "code": "CISC109",
+                "name": "Introduction to Computer Science I",
+                "prereq": "",
+                "credits": 3
+            },
+            {
+                "code": "MATH242",
+                "name": "Analytic Geometry and Calculus A",
+                "prereq": "",
+                "credits": 4
+            }
+        ]
+    }
+]

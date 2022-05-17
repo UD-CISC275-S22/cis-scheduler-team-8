@@ -1,8 +1,8 @@
 export interface course {
-    //id: number;
+    //id: string;
     code: string;
     name: string;
-    prereqs: string;
     credits: number;
-    taken: boolean;
+    prereq: string;
+    //taken: boolean;
 }

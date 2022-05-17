@@ -1,180 +1,138 @@
-import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
-import { course } from "../Interfaces/course";
-const DEFAULT_COURSE: course = {
-    //id: 0,
-    code: "CISC101",
-    name: "Introduction",
-    credits: 3,
-    prereqs: "",
-    taken: false
-};
+            <Form.Group controlId="taken">
+                    <Form.Label>Taken</Form.Label>
+                    <Form.Select value={credits} onChange={updateTaken}>
+                        <option value={true}>Taken</option>
+                        <option value={false}>Not Taken</option>
+                    </Form.Select>
+                </Form.Group>  
+            {(
+                const [taken, setTaken] = useState<boolean>(course.taken);
 
-export function CourseEditor({
-    courses,
-    setCourses
-}: {
-    courses: course[];
-    setCourses: (courses: course[]) => void;
-}): JSX.Element {
-    const [courseList, setCourseList] = useState<course[]>(courses);
-
-    function changeCode(id: number, newCode: string) {
-        setCourseList(
-            courses.map(
-                (course: course): course =>
-                    course.id === id ? { ...course, code: newCode } : course
-            )
-        );
-        setCourses(
-            courses.map(
-                (course: course): course =>
-                    course.id === id ? { ...course, code: newCode } : course
-            )
-        );
+function savePlan() {
+        addPlan({
+            id: id,
+            name: name,
+            semester: []
+        });
+        setId(id + 1);
     }
 
-    function changeTitle(id: number, newName: string) {
-        setCourseList(
-            courses.map(
-                (course: course): course =>
-                    course.id === id ? { ...course, name: newName } : course
-            )
-        );
-        setCourses(
-            courses.map(
-                (course: course): course =>
-                    course.id === id ? { ...course, name: newName } : course
-            )
-        );
-    }
+export function AddPlan({ addPlan }: { addPlan: (newPlan: degree) => void }) {
+    type ChangeEvent = React.ChangeEvent<
+        HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
+    >;
+    const [id, setId] = useState<number>(0);
+    const [name, setName] = useState<string>("");
+    //const [semester, setSemester] = useState<string>("");
 
-    function changeCredits(id: number, newCredits: number) {
-        setCourseList(
-            courses.map(
-                (course: course): course =>
-                    course.id === id
-                        ? { ...course, credits: newCredits }
-                        : course
-            )
-        );
-        setCourses(
-            courses.map(
-                (course: course): course =>
-                    course.id === id
-                        ? { ...course, credits: newCredits }
-                        : course
-            )
-        );
+    function updatePlans() {
+        const newPlanList = [
+            ...plans,
+            {
+                id: 0, //TODO figure out id updates
+                name: name,
+                semester: []
+            }
+        ];
+        setPlan(newPlanList);
     }
-
-    function deleteCourse(id: number) {
-        setCourseList(
-            courses.filter((course: course): boolean => course.id !== id)
-        );
-        setCourses(
-            courses.filter((course: course): boolean => course.id !== id)
-        );
+    function savePlan() {
+        addPlan({
+            id: id,
+            name: name,
+            semester: []
+        });
+        setId(id + 1);
     }
-
-    function addCourse() {
-        setCourseList(
-            courses.concat({ ...DEFAULT_COURSE, id: courses.length + 1 })
-        );
-        setCourses(
-            courses.concat({ ...DEFAULT_COURSE, id: courses.length + 1 })
-        );
+    function updateName(event: React.ChangeEvent<HTMLSelectElement>) {
+        setName(event.target.value);
     }
-
     return (
         <div>
-            <table width="auto" className="Course-editor">
-                <tr>
-                    <th>Course Code</th>
-                    <th>Course Name</th>
-                    <th>Credits</th>
-                    <th>Prereqs</th>
-                    <th>Completed</th>
-                    <th>Required</th>
-                </tr>
-                {courseList.map((course: course) => (
-                    <tr key={course.id}>
-                        <td>
-                            <Form.Control
-                                type="string"
-                                value={course.code}
-                                onChange={(
-                                    event: React.ChangeEvent<HTMLInputElement>
-                                ) => {
-                                    changeCode(course.id, event.target.value);
-                                    console.log("Course code edited");
-                                }}
-                            />
-                        </td>
-                        <td>
-                            <Form.Control
-                                type="string"
-                                value={course.name}
-                                onChange={(
-                                    event: React.ChangeEvent<HTMLInputElement>
-                                ) => {
-                                    changeTitle(course.id, event.target.value);
-                                    console.log("Course title edited");
-                                }}
-                            />
-                        </td>
-                        <td>
-                            <Form.Control
-                                type="number"
-                                value={course.credits}
-                                onChange={(
-                                    event: React.ChangeEvent<HTMLInputElement>
-                                ) => {
-                                    changeCredits(
-                                        course.id,
-                                        parseInt(event.target.value, 10)
-                                    );
-                                    console.log("Course credits edited");
-                                }}
-                            />
-                        </td>
-                        <td>
-                            <Button
-                                onClick={() => deleteCourse(course.id)}
-                                variant="danger"
-                                className="me-8"
-                            >
-                                Delete
-                            </Button>
-                        </td>
-                    </tr>
-                ))}
-            </table>
-            <Button
-                onClick={() => addCourse()}
-                variant="success"
-                className="m-4"
-            >
-                Add Course
-            </Button>
+            <div>
+                <Form.Group controlId="sessions">
+                    <Form.Label>Plans</Form.Label>
+                    <Form.Select value={session} onChange={updateName}>
+                        {plans.map((item) => {
+                            return (
+                                <option key={item.name} value={item.name}>
+                                    {" "}
+                                    {item.name}{" "}
+                                </option>
+                            );
+                        })}
+                    </Form.Select>
+                </Form.Group>
+            </div>
+            <div>
+                <Button onClick={() => updatePlans()}> Add Plan </Button>
+                <Form.Group controlId="degreeName">
+                    <Form.Label>Plan Name</Form.Label>
+                    <Form.Control
+                        value={name}
+                        onChange={(
+                            event: React.ChangeEvent<HTMLInputElement>
+                        ) => setName(event.target.value)}
+                    />
+                </Form.Group>
+            </div>
         </div>
     );
 }
 
 
-
-
-export function SemesterView({
-    Semesters
-}: {
-    Semesters: semester[];
-}): JSX.Element {
-    return (
-        <div>
-            <Container>
-                {Semesters.map(Semester: semester): JSX.Element => (
-                )}
-            </Container>
-        </div>
+For App.tsx intializing plan
+const intialPlan = samplePlan.map(
+        (plan): degree => ({
+            ...plan,
+            semester: plan.semesters.map(
+                (semester): semester => ({
+                    ...semester,
+                    courses: semester.courses.map(
+                        (course): course => ({ ...course })
+                    )
+                })
+            ),
+            name: plan.name
+        })
     );
-}
+    const [plans, setPlans] = useState<degree[]>(intialPlan);
+
+    function addDegreePlan(newPlan: degree) {
+        setPlans([...plans, newPlan]);
+    }
+
+
+
+
+<Modal.Body>
+                <Form.Group controlId="sessions">
+                    <Form.Label>Session Season</Form.Label>
+                    <Form.Select value={session} onChange={updateSemester}>
+                        <option value="Fall">Fall</option>
+                        <option value="Winter">Winter</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Summer">Summer</option>
+                    </Form.Select>
+                </Form.Group>
+                <Form.Group controlId="year">
+                    <Form.Label>Session Year</Form.Label>
+                    <Form.Control value={year} onChange={updateYear} />
+                </Form.Group>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                    Close
+                </Button>
+                <Button variant="primary" onClick={saveSemester}>
+                    Save Changes
+                </Button>
+            </Modal.Footer>
+
+<div>
+                <addSemester
+                    show={showAddModal}
+                    handleClose={handleCloseAddModal}
+                    adSemester={addSemester}
+                ></addSemester>
+            </div>

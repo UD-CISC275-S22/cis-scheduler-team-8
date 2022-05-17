@@ -1,0 +1,14 @@
+[
+    {
+        "code": "CISC108",
+        "name": "Introduction to Computer Science I",
+        "prereq": "",
+        "credits": 3
+    },
+    {
+        "code": "MATH242",
+        "name": "Analytic Geometry and Calculus A",
+        "prereq": "",
+        "credits": 4
+    }
+]
