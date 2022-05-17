@@ -8,6 +8,7 @@ import { SemesterControl } from "./SemesterControl";
 import { SemesterEditor } from "./SemesterEditor";
 
 //import { AddSession } from "../Components/addSemester";
+//hello
 export function SemesterView({
     semester,
     deleteSemester,
