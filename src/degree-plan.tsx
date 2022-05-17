@@ -4,6 +4,7 @@ import { degree } from "./Interfaces/plan";
 import { semester } from "./Interfaces/semester";
 import { course } from "./Interfaces/course";
 import { SessionPicker } from "./session-picker";
+import { Pool } from "./Components/poolOfCourses";
 
 //merge comment, delete later
 const defaultCourses: course[] = [
@@ -35,18 +36,25 @@ export function DegreePlan(): JSX.Element {
     const [name, setName] = useState<string>("Plan");
     const [session, setSession] = useState<string>("Fall");
     const [plans, setPlan] = useState<degree[]>(degreeList);
+    const [currentPlan, setCurrentPlan] = useState<degree>(plans[0]);
+    const [id, setId] = useState<number>(2);
     function updateSemester(event: React.ChangeEvent<HTMLSelectElement>) {
         setSession(event.target.value);
+        const filtered_array = plans.filter(
+            (plan: degree): boolean => plan.name != session
+        );
+        setCurrentPlan(filtered_array[0]);
     }
     function updatePlans() {
         const newPlanList = [
             ...plans,
             {
-                id: 0, //TODO figure out id updates
+                id: id, //TODO figure out id updates
                 name: name,
                 semester: []
             }
         ];
+        setId(id + 1);
         setPlan(newPlanList);
     }
     return (
@@ -78,7 +86,10 @@ export function DegreePlan(): JSX.Element {
                     />
                 </Form.Group>
             </div>
-            <SessionPicker plan={plans[0]}></SessionPicker>
+            <SessionPicker plan={currentPlan}></SessionPicker>
+            <br></br>
+            <Pool plan={currentPlan}></Pool>
+            <></>
         </div>
     );
 }

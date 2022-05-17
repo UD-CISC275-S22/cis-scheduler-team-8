@@ -8,6 +8,10 @@ import { degree } from "./Interfaces/plan";
 interface PassNewSemester {
     addSemester: (n: string, r: string) => void;
 }
+interface editSemester {
+    editSession: (idfind: number, season: string, year: string) => void;
+    previousSession: semester;
+}
 type ChangeEvent = React.ChangeEvent<
     HTMLTextAreaElement | HTMLInputElement | HTMLSelectElement
 >;
@@ -54,6 +58,51 @@ export function AddSession({ addSemester }: PassNewSemester): JSX.Element {
         </div>
     );
 }
+export function EditSession({
+    editSession,
+    previousSession
+}: editSemester): JSX.Element {
+    const [season, setSeason] = useState<string>(previousSession.session);
+    const [year, setYear] = useState<string>(previousSession.year);
+    const [edit, setEdit] = useState<boolean>(false);
+    function updateSemester(event: React.ChangeEvent<HTMLSelectElement>) {
+        setSeason(event.target.value);
+    }
+    function updateYear(event: ChangeEvent) {
+        setYear(event.target.value);
+    }
+    return (
+        <div>
+            <Button onClick={() => setEdit(!edit)}>Edit</Button>
+            {edit && (
+                <Form.Group controlId="sessions">
+                    <Form.Label>Session Season</Form.Label>
+                    <Form.Select value={season} onChange={updateSemester}>
+                        <option value="Fall">Fall</option>
+                        <option value="Winter">Winter</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Summer">Summer</option>
+                    </Form.Select>
+                </Form.Group>
+            )}
+            {edit && (
+                <Form.Group controlId="year">
+                    <Form.Label>Session Year</Form.Label>
+                    <Form.Control value={year} onChange={updateYear} />
+                </Form.Group>
+            )}
+            {edit && (
+                <Button
+                    onClick={() =>
+                        editSession(previousSession.id, season, year)
+                    }
+                >
+                    Confirm
+                </Button>
+            )}
+        </div>
+    );
+}
 export function SessionPicker({ plan }: { plan: degree }): JSX.Element {
     const [semesters, setSemesters] = useState<semester[]>(plan.semester);
     const [semesterNum, setNum] = useState<number>(2);
@@ -69,16 +118,15 @@ export function SessionPicker({ plan }: { plan: degree }): JSX.Element {
         const newNum = semesterNum + 1;
         setNum(newNum);
     }
-    function changeSemester(semesterName: string, semesterYear: string) {
-        /*Fix*/
-        const newSemesters = semesters.map(
-            (semester: semester): semester =>
-                semester.session === semesterName &&
-                semester.year === semesterYear
-                    ? { ...semester }
-                    : { ...semester }
+    function changeSemester(idfind: number, a: string, b: string) {
+        /*I had to make these variable names small because prettier wouldn't let me
+        Newseason = a, NewYear = b
+        x = semester */
+        const modifiedSemesters = semesters.map(
+            (x: semester): semester =>
+                idfind === x.id ? { ...x, session: a, year: b } : { ...x }
         );
-        setSemesters(newSemesters);
+        setSemesters(modifiedSemesters);
     }
     function removeSemester(idfind: number) {
         const newSemesters = semesters.filter(
@@ -97,13 +145,10 @@ export function SessionPicker({ plan }: { plan: degree }): JSX.Element {
                     <p key={semester.session}>
                         {" "}
                         {semester.session} {semester.year}
-                        <Button
-                            onClick={() =>
-                                changeSemester(semester.session, semester.year)
-                            }
-                        >
-                            Edit
-                        </Button>
+                        <EditSession
+                            editSession={changeSemester}
+                            previousSession={semester}
+                        ></EditSession>
                         <Button onClick={() => removeSemester(semester.id)}>
                             Delete
                         </Button>

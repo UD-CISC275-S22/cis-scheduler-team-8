@@ -141,26 +141,18 @@ export function ClassPicker({
         ];
         setClasses(newClasses);
     }
-    function editClass(
-        newCode: string,
-        newName: string,
-        newCredits: number,
-        oldCourse: course
-    ) {
-        let newClasses: course[] = classes.filter(
-            (Class: course): boolean => Class.code !== oldCourse.code
+    function editClass(a: string, b: string, c: number, d: course) {
+        /*I had to make these variable names small because prettier wouldn't let me
+        A = new code, B = new name, C = new credits, D= old course
+        x = course
+        */
+        const clas = classes.map(
+            (x: course): course =>
+                x.code === d.code
+                    ? { ...x, code: a, name: b, credits: c }
+                    : { ...x }
         );
-        newClasses = [
-            ...newClasses,
-            {
-                code: newCode,
-                name: newName,
-                prereqs: "None",
-                credits: newCredits,
-                taken: true
-            }
-        ];
-        setClasses(newClasses);
+        setClasses(clas);
     }
     function removeClass(codeFind: string) {
         const newClasses = classes.filter(
@@ -172,7 +164,17 @@ export function ClassPicker({
         if (newID !== semester.id) {
             for (let i = 0; i < semesters.length; i++) {
                 if (semesters[i].id === newID) {
-                    semesters[i].courses.push(course);
+                    const newClasses = [
+                        ...semesters[i].courses,
+                        {
+                            code: course.code,
+                            name: course.name,
+                            prereqs: course.prereqs,
+                            credits: course.credits,
+                            taken: course.taken
+                        }
+                    ];
+                    semesters[i].courses = newClasses;
                 }
             }
             removeClass(course.code);
