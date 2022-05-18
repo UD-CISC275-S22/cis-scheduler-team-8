@@ -60,7 +60,7 @@ All files             |    4.71 |        0 |    2.94 |    4.95 |
   addClass.tsx        |       0 |        0 |       0 |       0 | 11-57             
   courseListRead.tsx  |       0 |      100 |       0 |       0 | 6-9               
   courseTable.tsx     |       0 |      100 |       0 |       0 | 5-13              
-  modalView.tsx       |       0 |      100 |       0 |       0 | 15                
+  modalView.tsx       |       0 |      100 |       0 |       0 | 13                
   poolOfCourses.tsx   |   10.52 |        0 |       0 |   11.11 | 12-65             
   semesterTable.tsx   |       0 |      100 |       0 |       0 | 15                
  src/Interfaces       |       0 |        0 |       0 |       0 |                   
@@ -71,5 +71,5 @@ All files             |    4.71 |        0 |    2.94 |    4.95 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.444 s
+Time:        2.693 s
 Ran all test suites.
