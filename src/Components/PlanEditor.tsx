@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
-//import { semester } from "../Interfaces/semester";
 import { degree } from "../Interfaces/plan";
-//import { CourseList } from "./courseListRead";
 
 export function PlanEditor({
     changeEditing,
@@ -15,7 +13,6 @@ export function PlanEditor({
     editPlan: (id: number, newPlan: degree) => void;
     deletePlan: (id: string) => void;
 }): JSX.Element {
-    //const [currentPlan, setCurrentPlan] = useState<string>(plan.name);
     const [name, setName] = useState<string>(plan.name);
 
     function save() {
