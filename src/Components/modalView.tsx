@@ -1,8 +1,6 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
 import { course } from "../Interfaces/course";
-//import { CourseEditor } from "../Components/courseEditor";
-//import { ClassPicker } from "../class-picker";
 
 export function ModalView({
     show,
