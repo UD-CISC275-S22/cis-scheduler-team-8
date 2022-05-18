@@ -35,18 +35,6 @@ function App(): JSX.Element {
     function addPlan(newPlan: degree) {
         setPlans([...plans, newPlan]);
     }
-    function deleteDegree(id: string) {
-        setPlans(
-            plans.filter((plan: degree): boolean => plan.id.toString() !== id)
-        );
-    }
-    function editPlan(id: number, newPlan: degree) {
-        setPlans(
-            plans.map(
-                (plan: degree): degree => (plan.id === id ? newPlan : plan)
-            )
-        );
-    }
 
     return (
         <div className="App">
