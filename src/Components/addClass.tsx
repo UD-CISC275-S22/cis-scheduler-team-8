@@ -40,7 +40,7 @@ export function AddClass({ addClass }: PassNewClass): JSX.Element {
             )}
             {edit && (
                 <Form.Group controlId="credits">
-                    <Form.Label>Session Season</Form.Label>
+                    <Form.Label>Credits:</Form.Label>
                     <Form.Select value={credits} onChange={updateCredits}>
                         <option value={1}>1</option>
                         <option value={2}>2</option>
