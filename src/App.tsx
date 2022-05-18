@@ -50,7 +50,7 @@ function App(): JSX.Element {
                 </p>
             </div>
             <div className="Classes">
-                <header className="Class-header">CISC Reqirements</header>
+                <header className="Class-header">CISC Requirements</header>
                 <p>
                     Requirements: CISC 108 (3), CISC 181 (3), CISC 210 (3), CISC
                     220 (3), CISC 260 (3), CISC 275 (3),<br></br> CISC 303 (3),
