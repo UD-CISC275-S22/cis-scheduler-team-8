@@ -7,11 +7,7 @@ import { AddSemesterModal } from "./AddSemester";
 import { degree } from "../Interfaces/plan";
 import { semester } from "../Interfaces/semester";
 
-export function PlanView({
-    plan
-}: {
-    plan: degree;
-}): JSX.Element {
+export function PlanView({ plan }: { plan: degree }): JSX.Element {
     const [showAddModal, setShowAddModal] = useState(false);
     const [semesters, setSemesters] = useState<semester[]>(plan.semesters);
 
