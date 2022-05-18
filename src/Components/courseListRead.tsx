@@ -8,7 +8,7 @@ export function CourseList({ courses }: { courses: course[] }): JSX.Element {
             {courses.map((course: course) => (
                 <ListGroup.Item
                     as="li"
-                    key={course.id}
+                    key={course.code}
                     className="d-flex align-items-start"
                 >
                     <div className="ms-2 me-auto">
