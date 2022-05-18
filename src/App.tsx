@@ -86,11 +86,7 @@ function App(): JSX.Element {
             </div>
             <br></br>
             <div>
-                <PlanList
-                    plans={plans}
-                    deletePlan={deleteDegree}
-                    editPlan={editPlan}
-                ></PlanList>
+                <PlanList plans={plans}></PlanList>
                 <Button onClick={handleShowAddModal}>
                     Create New Degree Plan
                 </Button>
