@@ -11,10 +11,6 @@ export function PlanView({
     plan
 }: {
     plan: degree;
-    /*
-    deleteDegree: (id: string) => void;
-    editDegree: (id: number, newDegree: degree) => void;
-    */
 }): JSX.Element {
     const [showAddModal, setShowAddModal] = useState(false);
     const [semesters, setSemesters] = useState<semester[]>(plan.semesters);
