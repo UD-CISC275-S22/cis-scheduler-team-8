@@ -5,44 +5,48 @@ import "./interfaces.ts";
 
 //interfaces
 import { semester } from "./Interfaces/semester";
+import { degree } from "./Interfaces/plan";
 
 //data
-import sampleSemester from "./Data/sampleSemester.json";
+import samplePlan from "./Data/samplePlan.json";
 
 //components
 //import { DegreePlan } from "./degree-plan";
-import { SemesterList } from "./Components/SemesterList";
-import { AddSemesterModal } from "./Components/AddSemester";
+import { PlanList } from "./Components/PlanList";
+import { AddPlan } from "./Components/AddPlan";
+import { Pool } from "./Components/poolOfCourses";
 
-const SEMESTER = sampleSemester.map((semester: semester) => ({ ...semester }));
+const PLAN = samplePlan.map(
+    (plan): degree => ({
+        ...plan,
+        semesters: plan.semesters.map((semester): semester => ({ ...semester }))
+    })
+);
 
 function App(): JSX.Element {
-    const [semesters, setSemesters] = useState<semester[]>(SEMESTER);
-
     const [showAddModal, setShowAddModal] = useState(false);
-
-    function editSemester(id: number, newSemester: semester) {
-        setSemesters(
-            semesters.map(
-                (semester: semester): semester =>
-                    semester.id === id ? newSemester : semester
-            )
-        );
-    }
-
-    function deleteSemester(id: string) {
-        setSemesters(
-            semesters.filter(
-                (semester: semester): boolean => semester.id.toString() !== id
-            )
-        );
-    }
-    function addSemester(newSemester: semester) {
-        setSemesters([...semesters, newSemester]);
-    }
     //handlers for opening and closing addCourseModal
     const handleCloseAddModal = () => setShowAddModal(false);
     const handleShowAddModal = () => setShowAddModal(true);
+
+    //Selecting and Adding Plan
+    const [plans, setPlans] = useState<degree[]>(PLAN);
+
+    function addPlan(newPlan: degree) {
+        setPlans([...plans, newPlan]);
+    }
+    function deleteDegree(id: string) {
+        setPlans(
+            plans.filter((plan: degree): boolean => plan.id.toString() !== id)
+        );
+    }
+    function editPlan(id: number, newPlan: degree) {
+        setPlans(
+            plans.map(
+                (plan: degree): degree => (plan.id === id ? newPlan : plan)
+            )
+        );
+    }
 
     return (
         <div className="App">
@@ -57,29 +61,47 @@ function App(): JSX.Element {
                     semester consists of a list of courses. <br></br>
                 </p>
             </div>
+            <div className="Classes">
+                <header className="Class-header">CISC Reqirements</header>
+                <p>
+                    Requirements: CISC 108 (3), CISC 181 (3), CISC 210 (3), CISC
+                    220 (3), CISC 260 (3), CISC 275 (3),<br></br> CISC 303 (3),
+                    CISC 304 CISC 304 (3), CISC 320 (3), CISC 355 (3), CISC 361
+                    (3), CISC 372 (3), 372 (3), EGGG 101 (3), ENGL 110 (3), ENGL
+                    410 (3), 410 (3), MATH 205 (4), MATH 210 (3), MATH 241 (4),
+                    MATH 242
+                    <br></br>
+                </p>
+            </div>
+            <div className="Requirements">
+                <p>
+                    Requirements: <br></br>Mathematics, Natural Sciences and
+                    Technology Credits: 3 <br></br>Creative Arts and Humanities
+                    Credits: 3 <br></br>Social and Behavioral Sciences Credits:
+                    3 <br></br>History and Cultural Change Credits: 3 Technical
+                    Elective Credits: 12 <br></br>Multicultural Credits: 3{" "}
+                    <br></br>Total Credits Needed: 124
+                    <br></br>
+                </p>
+            </div>
             <br></br>
             <div>
-                <SemesterList
-                    semesters={semesters}
-                    deleteSemester={deleteSemester}
-                    editSemester={editSemester}
-                ></SemesterList>
-            </div>
-            <div>
-                <Button
-                    variant="success"
-                    className="m-4"
-                    onClick={handleShowAddModal}
-                >
-                    +
+                <PlanList
+                    plans={plans}
+                    deletePlan={deleteDegree}
+                    editPlan={editPlan}
+                ></PlanList>
+                <Button onClick={handleShowAddModal}>
+                    Create New Degree Plan
                 </Button>
-                <AddSemesterModal
+                <AddPlan
                     show={showAddModal}
                     handleClose={handleCloseAddModal}
-                    addSemester={addSemester}
-                ></AddSemesterModal>
+                    addDegree={addPlan}
+                ></AddPlan>
+                <br></br>
+                <Pool plan={plans[0]}></Pool>
             </div>
-            <br></br>
         </div>
     );
 }

@@ -41,7 +41,9 @@ export function SemesterEditor({
                         <Col>
                             <Form.Select
                                 value={currentSession}
-                                onChange={() => setCurrentSession}
+                                onChange={(
+                                    event: React.ChangeEvent<HTMLSelectElement>
+                                ) => setCurrentSession(event.target.value)}
                             >
                                 <option value="Fall">Fall</option>
                                 <option value="Winter">Winter</option>
@@ -55,7 +57,9 @@ export function SemesterEditor({
                         <Col>
                             <Form.Control
                                 value={year}
-                                onChange={() => setYear}
+                                onChange={(
+                                    event: React.ChangeEvent<HTMLInputElement>
+                                ) => setYear(event.target.value)}
                             />
                         </Col>
                     </Form.Group>

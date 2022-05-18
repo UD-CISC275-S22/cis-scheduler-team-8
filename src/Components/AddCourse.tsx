@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 import { course } from "../Interfaces/course";
 
 //components
-import { AddClass } from "../Data/addClass";
+import { AddClass } from "./addClass";
 
 export function AddCourses({
     courses,
