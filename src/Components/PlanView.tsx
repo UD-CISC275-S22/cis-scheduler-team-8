@@ -8,13 +8,9 @@ import { degree } from "../Interfaces/plan";
 import { semester } from "../Interfaces/semester";
 
 export function PlanView({
-    plan,
-    editPlan,
-    deletePlan
+    plan
 }: {
     plan: degree;
-    editPlan: (id: number, newDegree: degree) => void;
-    deletePlan: (id: string) => void;
     /*
     deleteDegree: (id: string) => void;
     editDegree: (id: number, newDegree: degree) => void;
