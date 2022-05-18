@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
 import { semester } from "../Interfaces/semester";
-//import { CourseList } from "./courseListRead";
 
 export function SemesterEditor({
     changeEditing,
