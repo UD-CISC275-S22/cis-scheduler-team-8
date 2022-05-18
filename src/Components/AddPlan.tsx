@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { degree } from "../Interfaces/plan";
-//import { semester } from "./Interfaces/semester";
 
 export function AddPlan({
     show,
@@ -13,7 +12,6 @@ export function AddPlan({
     addDegree: (newDegree: degree) => void;
 }) {
     const [id, setId] = useState<number>(0);
-    //const [semesters, setSemesters] = useState<semester[]>([]);
 
     function savePlan() {
         addDegree({
